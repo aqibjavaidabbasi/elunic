@@ -1,0 +1,40 @@
+const path = require('path');
+module.exports = {
+  config: path.resolve('apps/backend/src/config/config.js'),
+  migrationsPath: path.resolve('apps/backend/src/migrations'),
+  modelsPath: path.resolve('apps/backend/src/app')
+};
+
+
+// this is the sequelize migation 
+// generated via command npx sequelize-cli migration:generate --name create-user-message
+
+
+/**
+ * 
+ * 
+ * 
+ * sample migration
+
+'use strict';
+module.exports = {
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.createTable('UserMessages', {
+      id: { allowNull: false, autoIncrement: true, primaryKey: true, type: Sequelize.INTEGER },
+      message: { type: Sequelize.STRING },
+      createdAt: { allowNull: false, type: Sequelize.DATE },
+      updatedAt: { allowNull: false, type: Sequelize.DATE }
+    });
+  },
+  down: async (queryInterface) => {
+    await queryInterface.dropTable('UserMessages');
+  }
+};
+
+to run migration
+
+npx sequelize-cli db:migrate
+
+
+ * 
+ */

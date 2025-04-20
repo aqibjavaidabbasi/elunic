@@ -1,0 +1,9 @@
+<p-messages [(value)]="[{severity:'info', summary:message}]"></p-messages>
+<p-listbox [options]="items"></p-listbox>
+<br />
+<input type="text" [(ngModel)]="newMessage" placeholder="Type a message">
+<button (click)="sendMessage()">Send</button>
+<ul>
+  <li *ngFor="let msg of messages">{{msg.message}}</li>
+</ul>
+<p-paginator [rows]="3" [totalRecords]="totalRecords" (onPageChange)="onPageChange($event)"></p-paginator>
